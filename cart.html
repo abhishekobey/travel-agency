@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="cart.css"/>
+    <script src="script.js"></script>
+    <title>Cart</title>
+</head>
+<body>
+<h1>Cart</h1>
+
+<div class="shopping-cart">
+
+    <div class="column-labels">
+        <label class="product-image">Image</label>
+        <label class="product-details">Product</label>
+        <label class="product-price">Price</label>
+        <label class="product-quantity">Quantity</label>
+        <label class="product-removal">Remove</label>
+        <label class="product-line-price">Total</label>
+    </div>
+
+    <div id="product">
+    </div>
+
+
+    <div class="totals">
+        <div class="totals-item totals-item-total">
+            <label>Grand Total</label>
+            <div class="totals-value" id="grand-total"></div>
+        </div>
+    </div>
+
+    <a href="./index.html"><button class="checkout" onclick="pay()">PAY</button></a>
+
+</div>
+</body>
+</html>

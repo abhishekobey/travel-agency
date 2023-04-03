@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Travel Agency</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
+    <link rel="stylesheet" href="login.css"/>
+    <script src="script.js"></script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="nav_bar">
+            <div class="logo">
+                <h4>TRAVEL AGENCY</h4>
+            </div>
+
+            <div class="menu_list">
+                <a onclick="homeClick()">Home</a>
+                <a href="#packages" onclick="homeClick()">Packages</a>
+                <a href="#hotels" onclick="homeClick()">Hotels</a>
+                <a href="#flights" onclick="homeClick()">Flights</a>
+                <a href="#book" onclick="homeClick()">Book Now</a>
+                <a href="#footer" onclick="homeClick()">About us</a>
+
+                <a href="./cart.html"><img class="cart" src="images/cart.png"/></a>
+                <button class="lg_btn 1" onclick="loginHandler()">Login</button>
+                <button class="lg_btn 2" onclick="loginHandler(true)">SignUp</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!------------------------LOGIN------------------------------------------------->
+<div id="id01" class="modal">
+
+    <div class="modal-content animate">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="/images/avatar.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="login-container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <div class="confirm-password" style="display: none">
+                <label><b>Confirm Password</b></label>
+                <input type="password" placeholder="Confirm Password" name="psw" required>
+            </div>
+            <span class="alert">❗ All field are required.</span>
+            <span class="alert">❗ Password must be at least 8 characters.</span>
+            <span class="alert">❗ Password must contain at least 1 number.</span>
+            <span class="alert">❗ Password must contain at least 1 capital letter.</span>
+            <span class="alert">❗ Password must contain at least 1 special character.</span>
+            <span class="alert">❗ Passwords don't match.</span>
+            <button class="login-button" onclick="popUpLoginHandler()">Login</button>
+        </div>
+    </div>
+</div>
+
+<div class="page1">
+    <div class="slideshow-container">
+
+        <div class="mySlides fade" style="display: block">
+            <img src="images/travel1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="images/travel.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="images/travel.jpeg" style="width:100%">
+        </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center; display: none">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <section class="home_section">
+        <div class="overlay">
+            <div class="container">
+                <div class="home">
+                    <h1><span>meet</span> people <br>discover <span>places</span> <br><span>enjoy</span> time</h1>
+                    <div class="home_buttons">
+                        <a href="#packages"><button class="btn1">Explore World</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="packages" id="packages">
+
+        <h1 class="heading">
+            <span>P</span>
+            <span>A</span>
+            <span>C</span>
+            <span>K</span>
+            <span>A</span>
+            <span>G</span>
+            <span>E</span>
+            <span>S</span>
+        </h1>
+
+        <div class="box-container">
+
+            <div class="box"
+                 onclick="packageOpenHandler('🇮🇳 Mumbai', '2 Nights, 2 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing', '$900.00', 'images/mumbai.jpg')">
+                <img src="images/mumbai.jpg" alt="">
+                <div class="content">
+                    <h3>🇮🇳 Mumbai </h3>
+                    <p>2 Nights, 2 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing</p>
+                    <div class="price"> $900.00 <span>$1200.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box"
+                 onclick="packageOpenHandler('🇺🇸 Hawaii', '1 Nights, 2 Flights, Meals, Hotel, Volvo, Sightseeing', '$950.00', 'images/hawaii.jpg')">
+                <img src="images/hawaii.jpg" alt="">
+                <div class="content">
+                    <h3>🇺🇸 Hawaii </h3>
+                    <p>1 Nights, 2 Flights, Meals, Hotel, Volvo, Sightseeing</p>
+                    <div class="price"> $950.00 <span>$1250.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇦🇺 Sydney ', '3 Nights, 2 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing', '$990.00', 'images/sydney.jpg')">
+                <img src="images/sydney.jpg" alt="">
+                <div class="content">
+                    <h3>🇦🇺 Sydney </h3>
+                    <p>3 Nights, 2 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing</p>
+                    <div class="price"> $990.00 <span>$1200.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇫🇷 Paris ', '5 Nights, 2 Flights, Meals, Tea/Coffee, 2 Hotel, Volvo, Sightseeing', '$5555.00 ', 'images/paris.jpg')">
+                <img src="images/paris.jpg" alt="">
+                <div class="content">
+                    <h3>🇫🇷 Paris </h3>
+                    <p>5 Nights, 2 Flights, Meals, Tea/Coffee, 2 Hotel, Volvo, Sightseeing</p>
+                    <div class="price"> $5555.00 <span>$10000.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇯🇵 Tokyo', '2 Nights, 0 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing', '$1000.00', 'images/tokyo.jpg')">
+                <img src="images/tokyo.jpg" alt="">
+                <div class="content">
+                    <h3>🇯🇵 Tokyo </h3>
+                    <p>2 Nights, 0 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing</p>
+                    <div class="price"> $1000.00 <span>$1250.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇪🇬 Egypt', '2 Nights, 2 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing', '$990.00', 'images/egypt.jpg')">
+                <img src="images/egypt.jpg" alt="">
+                <div class="content">
+                    <h3>🇪🇬 Egypt </h3>
+                    <p>2 Nights, 2 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing</p>
+                    <div class="price"> $990.00 <span>$1990.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇨🇦 Canada ', '9 Nights, 2 Flights, Meals, Hotel, Volvo, Sightseeing', '$850.00', 'images/canada.png')">
+                <img src="images/canada.png" alt="">
+                <div class="content">
+                    <h3>🇨🇦 Canada </h3>
+                    <p>9 Nights, 2 Flights, Meals, Hotel, Volvo, Sightseeing</p>
+                    <div class="price"> $850.00 <span>$1500.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇬🇧 London ', '4 Nights, 2 Flights, Meals, Tea/Coffee, 2 Hotel, Volvo, Sightseeing', '$990.00', 'images/london.jpg')">
+                <img src="images/london.jpg" alt="">
+                <div class="content">
+                    <h3>🇬🇧 London </h3>
+                    <p>4 Nights, 2 Flights, Meals, Tea/Coffee, 2 Hotel, Volvo, Sightseeing</p>
+                    <div class="price"> $990.00 <span>$1550.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="packages" id="hotels">
+
+        <h1 class="heading">
+            <span>H</span>
+            <span>O</span>
+            <span>T</span>
+            <span>E</span>
+            <span>L</span>
+            <span>S</span>
+        </h1>
+
+        <div class="box-container">
+
+            <div class="box"
+                 onclick="packageOpenHandler('🇮🇳 Mumbai', '2 Nights, Meals, Tea/Coffee, Towels, Blankets', '$900.00', 'images/hotel1.jpeg')">
+                <img src="images/hotel1.jpeg" alt="">
+                <div class="content">
+                    <h3>🇮🇳 Mumbai </h3>
+                    <p>2 Nights, Meals, Tea/Coffee, Towels, Blankets</p>
+                    <div class="price"> $900.00 <span>$1200.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box"
+                 onclick="packageOpenHandler('🇺🇸 Hawaii', '1 Nights, Meals, Sea facing, Blankets, Towels', '$950.00', 'images/hotel2.jpeg')">
+                <img src="images/hotel2.jpeg" alt="">
+                <div class="content">
+                    <h3>🇺🇸 Hawaii </h3>
+                    <p>1 Night, Meals, Sea facing, Blankets, Towels</p>
+                    <div class="price"> $950.00 <span>$1250.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇦🇺 Sydney ', '3 Nights, Meals, Sea facing, Blankets, Towels, Tea/Coffee', '$990.00', 'images/hotel3.jpeg')">
+                <img src="images/hotel3.jpeg" alt="">
+                <div class="content">
+                    <h3>🇦🇺 Sydney </h3>
+                    <p>3 Nights, Meals, Sea facing, Blankets, Towels, Tea/Coffee</p>
+                    <div class="price"> $990.00 <span>$1200.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇫🇷 Paris ', '5 Nights, Meals, Blankets, Towels, Tea/Coffee', '$5555.00 ', 'images/hotel4.webp')">
+                <img src="images/hotel4.webp" alt="">
+                <div class="content">
+                    <h3>🇫🇷 Paris </h3>
+                    <p>5 Nights, Meals, Blankets, Towels, Tea/Coffee</p>
+                    <div class="price"> $5555.00 <span>$10000.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇯🇵 Tokyo', '2 Nights, Meals, Tea/Coffee', '$1000.00', 'images/hotel5.webp')">
+                <img src="images/hotel5.webp" alt="">
+                <div class="content">
+                    <h3>🇯🇵 Tokyo </h3>
+                    <p>2 Nights, Meals, Tea/Coffee</p>
+                    <div class="price"> $1000.00 <span>$1250.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇪🇬 Egypt', '2 Nights, Fully AC, Meals, Tea/Coffee', '$990.00', 'images/hotel6.webp')">
+                <img src="images/hotel6.webp" alt="">
+                <div class="content">
+                    <h3>🇪🇬 Egypt </h3>
+                    <p>2 Nights, Fully AC, Meals, Tea/Coffee</p>
+                    <div class="price"> $990.00 <span>$1990.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇨🇦 Canada ', '2 Nights, Meals, Hot water, Hill Side View, Blankets, Tea/Coffee', '$850.00', 'images/hotel7.webp')">
+                <img src="images/hotel7.webp" alt="">
+                <div class="content">
+                    <h3>🇨🇦 Canada </h3>
+                    <p>2 Nights, Meals, Hot water, Hill Side View, Blankets, Tea/Coffee</p>
+                    <div class="price"> $850.00 <span>$1500.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇬🇧 London ', '4 Nights, Meals, Tea/Coffee', '$990.00', 'images/hotel8.webp')">
+                <img src="images/hotel8.webp" alt="">
+                <div class="content">
+                    <h3>🇬🇧 London </h3>
+                    <p>4 Nights, Meals, Tea/Coffee, Forest View</p>
+                    <div class="price"> $990.00 <span>$1550.00</span></div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="packages" id="flights">
+
+        <h1 class="heading">
+            <span>F</span>
+            <span>L</span>
+            <span>I</span>
+            <span>G</span>
+            <span>H</span>
+            <span>T</span>
+            <span>S</span>
+        </h1>
+
+        <div class="box-container">
+
+            <div class="box"
+                 onclick="packageOpenHandler('🇮🇳 Mumbai Flights', 'Via - Delhi, Chennai, Dubai', '$900.00', 'images/mumbai.jpg')">
+                <img src="images/mumbai.jpg" alt="">
+                <div class="content">
+                    <h3>🇮🇳 Mumbai Flights</h3>
+                    <p>Via - Delhi, Chennai, Dubai</p>
+                    <div class="price">Starting at $900.00</div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box"
+                 onclick="packageOpenHandler('🇺🇸 Hawaii Flights', 'Via - Japan, Mexico, Australia, Chicago', '$950.00', 'images/hotel2.jpeg')">
+                <img src="images/hawaii.jpg" alt="">
+                <div class="content">
+                    <h3>🇺🇸 Hawaii Flights</h3>
+                    <p>Via - Japan, Mexico, Australia, Chicago</p>
+                    <div class="price">Starting at $950.00</div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇫🇷 Paris Flights', 'Via - Belgium, London, Germany, India', '$5555.00 ', 'images/paris.jpg')">
+                <img src="images/paris.jpg" alt="">
+                <div class="content">
+                    <h3>🇫🇷 Paris Flights</h3>
+                    <p>Via - Belgium, London, Germany, India</p>
+                    <div class="price">Starting at $5555.00</div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="box" onclick="packageOpenHandler('🇨🇦 Canada Flights', 'Via - Dubai, India, Mexico, Chicago, Poland', '$850.00', 'images/canada.png')">
+                <img src="images/canada.png" alt="">
+                <div class="content">
+                    <h3>🇨🇦 Canada Flights</h3>
+                    <p>Via - Dubai, India, Mexico, Chicago, Poland</p>
+                    <div class="price">Starting at $850.00</div>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="book" id="book">
+
+        <h1 class="heading">
+            <span>B</span>
+            <span>O</span>
+            <span>O</span>
+            <span>K</span>
+            <span class="space"></span>
+            <span>N</span>
+            <span>O</span>
+            <span>W</span>
+        </h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="images/book-img.svg" alt="">
+            </div>
+
+            <form action="#">
+                <div class="inputBox">
+                    <h3>Where to</h3>
+                    <input type="text" placeholder="place name">
+                </div>
+                <div class="inputBox">
+                    <h3>How many</h3>
+                    <input type="number" placeholder="number of guests">
+                </div>
+                <div class="inputBox">
+                    <h3>Arrivals</h3>
+                    <input type="date">
+                </div>
+                <div class="inputBox">
+                    <h3>Leaving</h3>
+                    <input type="date">
+                </div>
+                <input type="submit" class="btn" value="Book Now">
+            </form>
+
+        </div>
+    </section>
+
+    <section class="footer" id="footer">
+        <div class="box-container">
+            <div class="box" style="text-align: center">
+                <h3>About us</h3>
+                <p style="margin: auto; width: 90%">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget
+                    nisl
+                    vitae elit ultrices euismod ac non orci. Class aptent taciti sociosqu ad litora torquent per conubia
+                    nostra, per inceptos himenaeos. Suspendisse rutrum, magna vel pellentesque tempus, ex enim molestie
+                    massa, in ultricies nunc purus non lorem. Ut quis bibendum nibh. Pellentesque congue cursus quam eu
+                    mattis. Integer metus magna, consectetur aliquet odio eu, pellentesque rhoncus urna. Cras ornare
+                    nisi in
+                    arcu finibus tristique. In hac habitasse platea dictumst.</p>
+            </div>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/plane.svg" style="width: 350px; height:30vh"/>
+            </div>
+            <div class="box">
+                <h3>Branch Locations</h3>
+                <a href="#">India</a>
+                <a href="#">USA</a>
+                <a href="#">Japan</a>
+                <a href="#">France</a>
+            </div>
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">Book</a>
+                <a href="#">Packages</a>
+                <a href="#">Services</a>
+                <a href="#">contact</a>
+            </div>
+            <div class="box">
+                <h3>Follow us</h3>
+                <a href="#">facebook</a>
+                <a href="#">instagram</a>
+                <a href="#">twitter</a>
+                <a href="#">linkedin</a>
+            </div>
+
+        </div>
+
+    </section>
+</div>
+<!------------------------page2-------------------------------------->
+<div class="page2" style="display: none">
+    <div class="packages" id="mumbai">
+        <div class="box-container">
+            <div class="box">
+                <div class="slideshow-container">
+                    <img id="imageP2" src="images/mumbai.jpg" style="height: 55vh;">
+                </div>
+                <br>
+                <div class="content">
+                    <h3 id="heading3">🇮🇳 Mumbai </h3>
+                    <h4 id="heading4">About package: <span style="font-weight: lighter">2 Nights, 2 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing</span>
+                    </h4>
+                    <div id="P1" class="price"> $900.00 <span>$1200.00</span></div>
+                    <a href="./cart.html" class="btn" onclick="handleBookNow()">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
