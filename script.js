@@ -1,4 +1,5 @@
 let slideIndex = 0;
+let burger = document.getElementsByClassName("burger")[0]
 const cartData = localStorage.getItem("cartData") ? JSON.parse(localStorage.getItem("cartData")) :
     [
         {
@@ -241,4 +242,16 @@ const isValidPasswordPattern = (passwordText) => {
 const pay = () => {
     window.alert("PAYMENT COMPLETED")
     localStorage.setItem("cartData", JSON.stringify([]))
+}
+
+const burgerClick = (burger) => {
+    if (burger) {
+        document.getElementsByClassName("nav_bar")[0].style.display = "none"
+        document.getElementsByClassName("burger")[0].style.display = "grid"
+        document.getElementsByClassName("burger")[1].style.display = "none"
+    } else {
+        document.getElementsByClassName("nav_bar")[0].style.display = "block"
+        document.getElementsByClassName("burger")[0].style.display = "none"
+        document.getElementsByClassName("burger")[1].style.display = "grid"
+    }
 }

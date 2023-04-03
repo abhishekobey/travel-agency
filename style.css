@@ -35,8 +35,12 @@ body::-webkit-scrollbar {
     color: var(--orange);
 }
 
+.burger {
+    display: none;
+}
+
 .container {
-    width: 1100px;
+    width: 100%;
     margin: auto;
 }
 
@@ -441,4 +445,52 @@ img {
 
 .footer .credit span {
     color: var(--orange);
+}
+
+@media only screen and (max-width: 600px) {
+    .burger {
+        display: grid;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        margin: 10px;
+    }
+    .burger span {
+        background-color: var(--orange);
+        color: var(--orange);
+        width: 40px;
+        display: inline-block;
+        margin: 2px;
+        border-radius: 20px;
+        height: 5px;
+    }
+    .nav_bar {
+        display: none;
+        position: absolute;
+        height: 100vh;
+        background-color: #ffffff;
+        z-index: 1;
+    }
+    .lg_btn {
+        margin: 1rem;
+    }
+    .menu_list {
+        display: grid;
+    }
+    .home_section {
+        top: 0;
+    }
+    .footer .box-container {
+        display: block;
+    }
+    .footer .box-container .box {
+        text-align: center;
+    }
+    .heading span {
+        padding: .2rem 0.5rem;
+    }
+    .book .row form {
+        flex: 0 0 24rem;
+        display: grid;
+    }
 }

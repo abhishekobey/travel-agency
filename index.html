@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <title>Travel Agency</title>
     <link rel="stylesheet" href="style.css"/>
     <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
@@ -11,6 +12,14 @@
 <body>
 <header>
     <div class="container">
+        <div class="burger" onclick="burgerClick(0)">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="burger" style="display: none" onclick="burgerClick(1)">
+            ❌
+        </div>
         <div class="nav_bar">
             <div class="logo">
                 <h4>TRAVEL AGENCY</h4>
@@ -91,7 +100,9 @@
                 <div class="home">
                     <h1><span>meet</span> people <br>discover <span>places</span> <br><span>enjoy</span> time</h1>
                     <div class="home_buttons">
-                        <a href="#packages"><button class="btn1">Explore World</button></a>
+                        <a href="#packages">
+                            <button class="btn1">Explore World</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -135,7 +146,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇦🇺 Sydney ', '3 Nights, 2 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing', '$990.00', 'images/sydney.jpg')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇦🇺 Sydney ', '3 Nights, 2 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing', '$990.00', 'images/sydney.jpg')">
                 <img src="images/sydney.jpg" alt="">
                 <div class="content">
                     <h3>🇦🇺 Sydney </h3>
@@ -145,7 +157,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇫🇷 Paris ', '5 Nights, 2 Flights, Meals, Tea/Coffee, 2 Hotel, Volvo, Sightseeing', '$5555.00 ', 'images/paris.jpg')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇫🇷 Paris ', '5 Nights, 2 Flights, Meals, Tea/Coffee, 2 Hotel, Volvo, Sightseeing', '$5555.00 ', 'images/paris.jpg')">
                 <img src="images/paris.jpg" alt="">
                 <div class="content">
                     <h3>🇫🇷 Paris </h3>
@@ -155,7 +168,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇯🇵 Tokyo', '2 Nights, 0 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing', '$1000.00', 'images/tokyo.jpg')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇯🇵 Tokyo', '2 Nights, 0 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing', '$1000.00', 'images/tokyo.jpg')">
                 <img src="images/tokyo.jpg" alt="">
                 <div class="content">
                     <h3>🇯🇵 Tokyo </h3>
@@ -165,7 +179,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇪🇬 Egypt', '2 Nights, 2 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing', '$990.00', 'images/egypt.jpg')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇪🇬 Egypt', '2 Nights, 2 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing', '$990.00', 'images/egypt.jpg')">
                 <img src="images/egypt.jpg" alt="">
                 <div class="content">
                     <h3>🇪🇬 Egypt </h3>
@@ -175,7 +190,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇨🇦 Canada ', '9 Nights, 2 Flights, Meals, Hotel, Volvo, Sightseeing', '$850.00', 'images/canada.png')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇨🇦 Canada ', '9 Nights, 2 Flights, Meals, Hotel, Volvo, Sightseeing', '$850.00', 'images/canada.png')">
                 <img src="images/canada.png" alt="">
                 <div class="content">
                     <h3>🇨🇦 Canada </h3>
@@ -185,7 +201,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇬🇧 London ', '4 Nights, 2 Flights, Meals, Tea/Coffee, 2 Hotel, Volvo, Sightseeing', '$990.00', 'images/london.jpg')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇬🇧 London ', '4 Nights, 2 Flights, Meals, Tea/Coffee, 2 Hotel, Volvo, Sightseeing', '$990.00', 'images/london.jpg')">
                 <img src="images/london.jpg" alt="">
                 <div class="content">
                     <h3>🇬🇧 London </h3>
@@ -234,7 +251,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇦🇺 Sydney ', '3 Nights, Meals, Sea facing, Blankets, Towels, Tea/Coffee', '$990.00', 'images/hotel3.jpeg')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇦🇺 Sydney ', '3 Nights, Meals, Sea facing, Blankets, Towels, Tea/Coffee', '$990.00', 'images/hotel3.jpeg')">
                 <img src="images/hotel3.jpeg" alt="">
                 <div class="content">
                     <h3>🇦🇺 Sydney </h3>
@@ -244,7 +262,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇫🇷 Paris ', '5 Nights, Meals, Blankets, Towels, Tea/Coffee', '$5555.00 ', 'images/hotel4.webp')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇫🇷 Paris ', '5 Nights, Meals, Blankets, Towels, Tea/Coffee', '$5555.00 ', 'images/hotel4.webp')">
                 <img src="images/hotel4.webp" alt="">
                 <div class="content">
                     <h3>🇫🇷 Paris </h3>
@@ -254,7 +273,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇯🇵 Tokyo', '2 Nights, Meals, Tea/Coffee', '$1000.00', 'images/hotel5.webp')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇯🇵 Tokyo', '2 Nights, Meals, Tea/Coffee', '$1000.00', 'images/hotel5.webp')">
                 <img src="images/hotel5.webp" alt="">
                 <div class="content">
                     <h3>🇯🇵 Tokyo </h3>
@@ -264,7 +284,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇪🇬 Egypt', '2 Nights, Fully AC, Meals, Tea/Coffee', '$990.00', 'images/hotel6.webp')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇪🇬 Egypt', '2 Nights, Fully AC, Meals, Tea/Coffee', '$990.00', 'images/hotel6.webp')">
                 <img src="images/hotel6.webp" alt="">
                 <div class="content">
                     <h3>🇪🇬 Egypt </h3>
@@ -274,7 +295,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇨🇦 Canada ', '2 Nights, Meals, Hot water, Hill Side View, Blankets, Tea/Coffee', '$850.00', 'images/hotel7.webp')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇨🇦 Canada ', '2 Nights, Meals, Hot water, Hill Side View, Blankets, Tea/Coffee', '$850.00', 'images/hotel7.webp')">
                 <img src="images/hotel7.webp" alt="">
                 <div class="content">
                     <h3>🇨🇦 Canada </h3>
@@ -284,7 +306,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇬🇧 London ', '4 Nights, Meals, Tea/Coffee', '$990.00', 'images/hotel8.webp')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇬🇧 London ', '4 Nights, Meals, Tea/Coffee', '$990.00', 'images/hotel8.webp')">
                 <img src="images/hotel8.webp" alt="">
                 <div class="content">
                     <h3>🇬🇧 London </h3>
@@ -333,7 +356,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇫🇷 Paris Flights', 'Via - Belgium, London, Germany, India', '$5555.00 ', 'images/paris.jpg')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇫🇷 Paris Flights', 'Via - Belgium, London, Germany, India', '$5555.00 ', 'images/paris.jpg')">
                 <img src="images/paris.jpg" alt="">
                 <div class="content">
                     <h3>🇫🇷 Paris Flights</h3>
@@ -343,7 +367,8 @@
                 </div>
             </div>
 
-            <div class="box" onclick="packageOpenHandler('🇨🇦 Canada Flights', 'Via - Dubai, India, Mexico, Chicago, Poland', '$850.00', 'images/canada.png')">
+            <div class="box"
+                 onclick="packageOpenHandler('🇨🇦 Canada Flights', 'Via - Dubai, India, Mexico, Chicago, Poland', '$850.00', 'images/canada.png')">
                 <img src="images/canada.png" alt="">
                 <div class="content">
                     <h3>🇨🇦 Canada Flights</h3>
