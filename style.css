@@ -490,7 +490,6 @@ img {
         padding: .2rem 0.5rem;
     }
     .book .row form {
-        flex: 0 0 24rem;
         display: grid;
     }
     .row .image {
