@@ -10,6 +10,7 @@
     padding: 0;
     border: none;
     outline: none;
+    scroll-behavior: smooth;
     text-decoration: none;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
@@ -494,5 +495,70 @@ img {
     }
     .row .image {
         display: none;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) and (orientation:portrait) {
+    .burger {
+        display: grid;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        margin: 10px;
+    }
+    .burger span {
+        background-color: var(--orange);
+        color: var(--orange);
+        width: 40px;
+        display: inline-block;
+        margin: 2px;
+        border-radius: 20px;
+        height: 5px;
+    }
+    .nav_bar {
+        display: none;
+        position: absolute;
+        height: 100vh;
+        width: 40%;
+        background-color: #ffffff;
+        z-index: 1;
+    }
+    .logo {
+        font-size: 2rem;
+    }
+    .lg_btn {
+        margin: 1rem;
+        font-size: 20px;
+    }
+    .menu_list a {
+        font-size: 18px;
+    }
+    .menu_list {
+        display: grid;
+    }
+    .home_section {
+        top: 0;
+    }
+    .footer .box-container {
+        display: block;
+    }
+    .footer .box-container .box {
+        text-align: center;
+        width: auto;
+    }
+    .heading span {
+        padding: .2rem 0.5rem;
+    }
+    .book .row form {
+        display: grid;
+    }
+    .row .image {
+        display: none;
+    }
+    .footer .box-container .box a {
+        font-size: 1.5rem;
+    }
+    .footer .box-container .box h3 {
+        font-size: 2rem;
     }
 }
