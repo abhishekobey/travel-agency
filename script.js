@@ -173,7 +173,7 @@ const handleBookNow = () => {
     localStorage.setItem("cartData", JSON.stringify(cartData))
 }
 
-if (window.location.href.split('/')[4] === "cart.html") {
+if (window.location.href.split('/')[3] === "cart.html") {
     window.onload = () => {
         let htmlElements = ''
         let currentCartData = localStorage.getItem("cartData") ? JSON.parse(localStorage.getItem("cartData")) : cartData
