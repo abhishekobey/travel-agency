@@ -1,13 +1,15 @@
 let slideIndex = 0;
+let today = new Date().getTime()
 const cartData = localStorage.getItem("cartData") ? JSON.parse(localStorage.getItem("cartData")) :
     [
         {
             line1: " Mumbai",
             line2: "2 Nights, 2 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing",
-            price: "$900.00",
+            price: "$900",
             image: "images/mumbai.jpg",
             quantity: 1,
-            total: "$900.00"
+            date: today,
+            total: "$900"
         },
     ]
 showSlides();
@@ -168,12 +170,13 @@ const handleBookNow = () => {
         price: document.getElementById("P1").textContent,
         image: document.getElementById("imageP2").src,
         quantity: 1,
+        date: today,
         total: document.getElementById("P1").textContent
     })
     localStorage.setItem("cartData", JSON.stringify(cartData))
 }
 
-if (window.location.href.split('/')[3] === "cart.html") {
+if (window.location.href.split('/')[4] === "cart.html") {
     window.onload = () => {
         let htmlElements = ''
         let currentCartData = localStorage.getItem("cartData") ? JSON.parse(localStorage.getItem("cartData")) : cartData
@@ -190,6 +193,9 @@ if (window.location.href.split('/')[3] === "cart.html") {
                 '        <div class="product-price" id="price">' + item.price + '</div>' +
                 '        <div class="product-quantity">' +
                 '            <input type="number" value="' + item.quantity + '" min="1" onchange="handleOnChange(event.target.value, ' + index + ')">' +
+                '        </div>' +
+                '        <div class="product-date">' +
+                '            <input type="date" value="'+ dateFormat(new Date()) +'" min="' + dateFormat(new Date()) + '" onchange="handleDateOnChange(event.target.value, ' + index + ')">' +
                 '        </div>' +
                 '        <div class="product-removal">' +
                 '            <button class="remove-product" onclick="removeItem(' + index + ')">' +
@@ -210,8 +216,43 @@ const handleOnChange = (quantity, index) => {
     const currentData = localStorage.getItem("cartData") ? JSON.parse(localStorage.getItem("cartData")) : cartData
     currentData[index].total = '$' + quantity * (currentData[index].price).split('$')[1]
     currentData[index].quantity = quantity
+    localStorage.setItem("quantity", JSON.stringify({quantity: quantity, index: index}))
     localStorage.setItem("cartData", JSON.stringify(currentData))
     document.getElementById("total" + index).textContent = '$' + quantity * (currentData[index].price).split('$')[1]
+    calculateGrandTotal()
+}
+
+const handleDateOnChange = (date, index) => {
+    const quantity = JSON.parse(localStorage.getItem("quantity")).quantity
+    const savedIndex = JSON.parse(localStorage.getItem("quantity")).index
+    const currentData = localStorage.getItem("cartData") ? JSON.parse(localStorage.getItem("cartData")) : cartData
+    const updatedDate = new Date(date).getTime()
+    const numberOfDays = parseInt((updatedDate - today) / 86400000)
+    const price = (currentData[index].price).split('$')[1]
+
+
+    if (index === savedIndex) {
+        if (numberOfDays <= 10) {
+            currentData[index].total = '$' + (price - (numberOfDays * 5)) * quantity
+            currentData[index].date = date
+        } else if (today < updatedDate && numberOfDays > 10) {
+            currentData[index].total = '$' + (price - 50) * quantity
+            currentData[index].date = date
+        }
+    } else {
+        if (numberOfDays <= 10) {
+            currentData[index].total = '$' + (price - (numberOfDays * 5))
+            currentData[index].date = date
+        } else if (today < updatedDate && numberOfDays > 10) {
+            currentData[index].total = '$' + (price - 50)
+            currentData[index].date = date
+        } else {
+            currentData[index].total = '$' + (price)
+            currentData[index].date = date
+        }
+    }
+    // localStorage.setItem("cartData", JSON.stringify(currentData))
+    document.getElementById("total" + index).textContent = currentData[index].total
     calculateGrandTotal()
 }
 
@@ -253,4 +294,10 @@ const burgerClick = (burger) => {
         document.getElementsByClassName("burger")[0].style.display = "none"
         document.getElementsByClassName("burger")[1].style.display = "grid"
     }
+}
+
+function dateFormat(date) {
+    let local = new Date(date);
+    local.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+    return local.toJSON().slice(0, 10);
 }

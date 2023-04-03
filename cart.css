@@ -5,27 +5,32 @@
 
 .product-details {
     float: left;
-    width: 37%;
+    width: 35%;
 }
 
 .product-price {
     float: left;
-    width: 12%;
+    width: 7%;
 }
 
 .product-quantity {
     float: left;
-    width: 10%;
+    width: 7%;
+}
+
+.product-date {
+    float: left;
+    width: 15%;
 }
 
 .product-removal {
     float: left;
-    width: 9%;
+    width: 7%;
 }
 
 .product-line-price {
     float: left;
-    width: 12%;
+    width: 7%;
     text-align: right;
 }
 
