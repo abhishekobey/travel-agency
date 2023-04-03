@@ -1,9 +1,8 @@
 let slideIndex = 0;
-let burger = document.getElementsByClassName("burger")[0]
 const cartData = localStorage.getItem("cartData") ? JSON.parse(localStorage.getItem("cartData")) :
     [
         {
-            line1: "🇮🇳 Mumbai",
+            line1: " Mumbai",
             line2: "2 Nights, 2 Flights, Meals, Tea/Coffee, Hotel, Volvo, Sightseeing",
             price: "$900.00",
             image: "images/mumbai.jpg",
