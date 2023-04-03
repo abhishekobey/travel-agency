@@ -493,4 +493,7 @@ img {
         flex: 0 0 24rem;
         display: grid;
     }
+    .row .image {
+        display: none;
+    }
 }
