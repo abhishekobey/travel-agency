@@ -251,7 +251,7 @@ const handleDateOnChange = (date, index) => {
             currentData[index].date = date
         }
     }
-    // localStorage.setItem("cartData", JSON.stringify(currentData))
+    localStorage.setItem("cartData", JSON.stringify(currentData))
     document.getElementById("total" + index).textContent = currentData[index].total
     calculateGrandTotal()
 }
