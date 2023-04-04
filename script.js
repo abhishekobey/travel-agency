@@ -223,13 +223,12 @@ const handleOnChange = (quantity, index) => {
 }
 
 const handleDateOnChange = (date, index) => {
-    const quantity = JSON.parse(localStorage.getItem("quantity")).quantity ? JSON.parse(localStorage.getItem("quantity")).quantity : 1
-    const savedIndex = JSON.parse(localStorage.getItem("quantity")).index ? JSON.parse(localStorage.getItem("quantity")).index : index
+    const quantity = JSON.parse(localStorage.getItem("quantity"))?.quantity ? JSON.parse(localStorage.getItem("quantity")).quantity : 1
+    const savedIndex = JSON.parse(localStorage.getItem("quantity"))?.index ? JSON.parse(localStorage.getItem("quantity")).index : index
     const currentData = localStorage.getItem("cartData") ? JSON.parse(localStorage.getItem("cartData")) : cartData
     const updatedDate = new Date(date).getTime()
     const numberOfDays = parseInt((updatedDate - today) / 86400000)
     const price = (currentData[index].price).split('$')[1]
-
 
     if (index === savedIndex) {
         if (numberOfDays <= 10) {
